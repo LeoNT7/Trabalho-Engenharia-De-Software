@@ -11,9 +11,34 @@ while True:
     print(" 2 - Retirar produto")
     print(" 3 - Sair")
     print("-----------------------------------------------")
-    op = input("Digite a opção >>")
+    menuOp = int(input("Digite a opção >>"))
+
+    if menuOp == 1:
+        while True:
+            print("------------ REGISTRAR ENTRADA DE PRODUTO --------------")
+            print("--------------------------------------------------------")
+            print("0 - Voltar")
+            op = int(input("Digite a opção >>"))
+            if op == 0:
+                break
+            
+    elif menuOp == 2:
+        while True:
+            print("------------ REGISTRAR RETIRADA DE PRODUTOS ------------")
+            print("--------------------------------------------------------")
+            print("0 - Voltar")
+            op = int(input("Digite a opção >>"))
+            if op == 0:
+                break
+
+    elif menuOp == 3:
+        print("SAINDO..")
+        break
     
 
+
+       
+                
 
     
 
