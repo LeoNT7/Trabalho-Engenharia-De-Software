@@ -1,7 +1,7 @@
 # SISTEMA SIMPLES DE CONTROLE DE ESTOQUE
 # Atividade Prática - Engenharia de Software
 
-# Produtos já cadastrados no sistema
+# Dicionário de produtos já cadastrados no sistema
 produtos = {
     1: {"nome": "Martelo de borracha", "quantidade": 10},
     2: {"nome": "Luvas de proteção", "quantidade": 5},
@@ -12,11 +12,9 @@ produtos = {
 # Lista para armazenar o histórico de entradas e saídas
 movimentacoes = []
 
-
 # Função para exibir uma linha de separação
 def linha():
     print("-" * 60)
-
 
 # Função para ler números inteiros sem quebrar o programa
 def ler_inteiro(mensagem):
@@ -26,7 +24,6 @@ def ler_inteiro(mensagem):
             return valor
         except ValueError:
             print("Digite apenas números inteiros!")
-
 
 # Função para listar os produtos cadastrados
 def listar_produtos():
@@ -41,13 +38,11 @@ def listar_produtos():
     print("0 - Voltar")
     linha()
 
-
 # Função para voltar ao menu principal
 def voltar():
     linha()
     print("Voltando ao menu principal...")
     linha()
-
 
 # Função para registrar a entrada de produtos no estoque
 def registrar_entrada():
@@ -74,7 +69,7 @@ def registrar_entrada():
             print("A quantidade deve ser maior que zero.")
             continue
 
-        data = input("Digite a data da entrada: ")
+        data = input("Digite a data da entrada (XX/XX/XXXX) : ")
         responsavel = input("Digite o nome do responsável: ")
 
         if data == "" or responsavel == "":
@@ -127,10 +122,10 @@ def registrar_saida():
         # Validação para não permitir saída maior que o estoque disponível
         if quantidade > produto["quantidade"]:
             print("Quantidade insuficiente em estoque!")
-            print(f"Estoque disponível: {produto['quantidade']}")
+            print(f"Estoque disponível do produto {produto['nome']}: {produto['quantidade']}")
             continue
 
-        data = input("Digite a data da saída: ")
+        data = input("Digite a data da saída (XX/XX/XXXX): ")
         responsavel = input("Digite o nome do responsável: ")
 
         if data == "" or responsavel == "":
@@ -172,7 +167,6 @@ def listar_movimentacoes():
             print(f"Responsável: {mov['responsavel']}")
             print(f"Estoque atual: {mov['estoque_atual']}")
             linha()
-
 
 # Programa principal
 while True:
